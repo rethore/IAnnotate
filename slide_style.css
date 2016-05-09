@@ -1,0 +1,31 @@
+.backgrounds {
+   -webkit-filter: brightness(.5);
+   -moz-filter: brightness(.5);
+   -o-filter: brightness(.5);
+   -ms-filter: brightness(.5);
+   filter: brightness(.5);
+}
+.reveal section img {
+  margin: 15px 0px;
+  background: 0;
+  border: 0px;
+  box-shadow: 0 0 0 0;
+}
+
+div em {
+  color: #e7ad52;
+}
+
+.chart rect {
+  fill: #63b6db;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+text {
+  font: 10px sans-serif;
+}
