@@ -5,11 +5,16 @@
    -ms-filter: brightness(.5);
    filter: brightness(.5);
 }
+
 .reveal section img {
   margin: 15px 0px;
   background: 0;
   border: 0px;
   box-shadow: 0 0 0 0;
+}
+
+.second_title {
+  color: #acacac;
 }
 
 div em {
