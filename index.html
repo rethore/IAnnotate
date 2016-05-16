@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/night.css">
+		<link rel="stylesheet" href="slide_style.css">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="http://www.fractalflows.com/img/ff.jpg">
+						<img src="img/iannotate.png" width="30%"/>
+            <h1>Emergence</h1>
+            <p>from <a href="http://fractalflows.com">FractalFlows.com</a></p>
+            <p>
+                <a href="mailto:pe@retho.re" target="_top">Pierre-Elouan Réthoré *</a> 
+                and
+                <a href="mailto:imad.abdallah.81@gmail.com" target="_top">Imad Abdallah</a>
+            </p>
+        </section>
+
+				<section data-external="authors.html"> </section>
+				<section data-external="annotations.html"> </section>
+				<section data-background="http://www.fractalflows.com/img/ff.jpg">
+					<h1>Publish <em class="fragment">or Perish</em></h1>
+				</section>
+				<section data-external="tsunamy.html"> </section>
+				<section data-external="attention.html"> </section>
+				<section data-external="ecosystem.html"> </section>
+				<section data-external="thankyou.html"> </section>
+      </div>
+    </div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'reveal.js/plugin/markdown/marked.js' },
+					{ src: 'reveal.js/plugin/markdown/markdown.js' },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); }},
+					{ src: 'plugin/external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
+				]
+			});
+		</script>
+
+<!-- Ether moving animation -->
+  <script type="text/javascript">
+    Reveal.addEventListener( 'fragmentshown', function( event ) {
+        // event.fragment = the fragment DOM element
+        if (event.fragment){
+					if (event.fragments.find(function(e){return e.text==='attention'})){
+						$('.my_attention').class("backgrounds")
+					}
+          if (event.fragments.find(function(e){return e.id==='ether_1'})){
+            console.log('Im in');
+            d3.select('#ether_1_1')
+              .attr("transform", "translate(-30,-30)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(60,60)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(200,200)");
+            d3.select('#ether_1_2')
+              .attr("transform", "translate(-30,-30)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(60,60)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(200,200)");
+            d3.select('#ether_1_3')
+              .attr("transform", "translate(-30,-30)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(60,60)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(-100,160)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(81,285)");
+            d3.select('#ether_1_4')
+              .attr("transform", "translate(-30,-30)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(60,60)")
+              .transition()
+              .duration(1000)
+              .attr("transform", "translate(220,-80)");
+          }
+        }
+    } );
+  </script>
+
+
+       <script type="text/javascript">
+
+
+           //------ code to show D3 Bar Chart on First Slide-------
+           var data = [44, 28, 15, 16, 23, 5];
+           var width = 420,
+               barHeight = 20;
+
+           var x = d3.scale.linear()
+               .domain([0, d3.max(data)])
+               .range([0, width]);
+
+           var chart = d3.select(".chart")
+               .attr("width", width)
+               .attr("height", barHeight * data.length);
+
+           var bar = chart.selectAll("g")
+               .data(data)
+             .enter().append("g")
+               .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+
+           bar.append("rect")
+               .attr("width", x)
+               .attr("height", barHeight - 1);
+
+           bar.append("text")
+               .attr("x", function(d) { return x(d) - 3; })
+               .attr("y", barHeight / 2)
+               .attr("dy", ".35em")
+               .text(function(d) { return d; });
+
+
+           //---Code below will show Bubble Charts on the second Slide -------
+           var diameter = 560,
+               format = d3.format(",d"),
+               color = d3.scale.category20c();
+
+           var bubble = d3.layout.pack()
+               .sort(null)
+               .size([diameter, diameter])
+               .padding(1.5);
+
+           var svg = d3.select(".bubleCharts")
+               .attr("width", diameter)
+               .attr("height", diameter)
+               .attr("class", "bubble");
+
+           d3.json("flare.json", function(error, root) {
+             var node = svg.selectAll(".node")
+                 .data(bubble.nodes(classes(root))
+                 .filter(function(d) { return !d.children; }))
+               .enter().append("g")
+                 .attr("class", "node")
+                 .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+             node.append("title")
+                 .text(function(d) { return d.className + ": " + format(d.value); });
+
+             node.append("circle")
+                 .attr("r", function(d) { return d.r; })
+                 .style("fill", function(d) { return color(d.packageName); });
+
+             node.append("text")
+                 .attr("dy", ".3em")
+                 .style("text-anchor", "middle")
+                 .text(function(d) { return d.className.substring(0, d.r / 3); });
+           });
+
+           // Returns a flattened hierarchy containing all leaf nodes under the root.
+           function classes(root) {
+             var classes = [];
+             function recurse(name, node) {
+               if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+               else classes.push({packageName: name, className: node.name, value: node.size});
+             }
+             recurse(null, root);
+             return {children: classes};
+           }
+
+           d3.select(self.frameElement).style("height", diameter + "px");
+       </script>
+	</body>
+</html>
